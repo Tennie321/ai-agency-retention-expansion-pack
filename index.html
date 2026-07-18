@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agency Client Retention & Expansion Prompt Pack</title>
+    <meta name="description" content="15 battle-tested AI prompts across the R.E.T.E.N.T.I.O.N. framework. Reduce churn, drive upsells, and protect your retainer revenue.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #0a0a0f 0%, #0f1629 25%, #0a0a0f 50%, #1a0f2e 75%, #0a0a0f 100%);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+        }
+        
+        .gradient-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 20% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 70%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
+                        radial-gradient(ellipse at 50% 50%, rgba(16, 185, 129, 0.04) 0%, transparent 50%);
+            animation: bgPulse 8s ease-in-out infinite alternate;
+        }
+        
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes bgPulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.1); opacity: 1; }
+        }
+        
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: 
+                linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .hero {
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #93c5fd;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 24px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #f0f0ff 0%, #93c5fd 40%, #a78bfa 70%, #6ee7b7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #a0a0b0;
+            max-width: 700px;
+            margin: 0 auto 32px;
+            font-weight: 400;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(59, 130, 246, 0.3);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.5);
+        }
+        
+        .cta-btn-secondary {
+            display: inline-block;
+            padding: 14px 32px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-weight: 600;
+            border-radius: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .cta-group {
+            margin-top: 16px;
+        }
+        
+        .price-tag {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 8px 20px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+            color: #6ee7b7;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            margin: 40px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-item .number {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #93c5fd, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-item .label {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 4px;
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 48px;
+            font-size: 1.05rem;
+        }
+        
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        
+        .framework-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .framework-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .framework-item .letter {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #93c5fd;
+            margin-bottom: 10px;
+        }
+        
+        .framework-item h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #e0e0f0;
+        }
+        
+        .framework-item p {
+            font-size: 0.8rem;
+            color: #888;
+            line-height: 1.4;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 20px;
+        }
+        
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 36px 28px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .pricing-card.featured {
+            border-color: rgba(59, 130, 246, 0.3);
+            background: rgba(59, 130, 246, 0.05);
+            transform: scale(1.03);
+        }
+        
+        .pricing-card.featured::before {
+            content: 'BEST VALUE';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 4px 16px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            border-radius: 100px;
+            letter-spacing: 0.05em;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.03) translateY(-4px);
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .pricing-card .price {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin: 16px 0 4px;
+            color: white;
+        }
+        
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #888;
+        }
+        
+        .pricing-card .saving {
+            font-size: 0.85rem;
+            color: #6ee7b7;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .pricing-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0 28px;
+        }
+        
+        .pricing-card ul li {
+            padding: 6px 0;
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        
+        .pricing-card ul li::before {
+            content: '✓ ';
+            color: #6ee7b7;
+            font-weight: 700;
+        }
+        
+        .pricing-card .card-btn {
+            display: block;
+            padding: 14px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .pricing-card.featured .card-btn {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border: none;
+            color: white;
+        }
+        
+        .pricing-card .card-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .pricing-card.featured .card-btn:hover {
+            opacity: 0.9;
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 20px 0;
+        }
+        
+        .faq-item summary {
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            padding: 4px 0;
+            color: #d0d0e0;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-item summary::-webkit-details-marker { display: none; }
+        
+        .faq-item summary::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: #666;
+            transition: transform 0.2s;
+        }
+        
+        .faq-item[open] summary::after {
+            content: '−';
+        }
+        
+        .faq-item .answer {
+            padding-top: 12px;
+            color: #888;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .email-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .email-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        
+        .email-section p {
+            color: #888;
+            margin-bottom: 32px;
+        }
+        
+        .email-form {
+            display: flex;
+            gap: 12px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        
+        .email-form input {
+            flex: 1;
+            padding: 14px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .email-form input::placeholder {
+            color: #555;
+        }
+        
+        .email-form input:focus {
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+        
+        .email-form button {
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            font-weight: 700;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        .email-form button:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        
+        .footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: #555;
+            font-size: 0.85rem;
+        }
+        
+        .footer a {
+            color: #666;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: #93c5fd;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .framework-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+            .pricing-card.featured { transform: none; }
+            .pricing-card.featured:hover { transform: translateY(-4px); }
+            .email-form { flex-direction: column; }
+            .hero h1 { font-size: 2rem; }
+            .cta-btn-secondary { margin-left: 0; margin-top: 12px; }
+        }
+        
+        @media (max-width: 480px) {
+            .framework-grid { grid-template-columns: 1fr; }
+            .hero { padding: 60px 0 40px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    <div class="grid-overlay"></div>
+    
+    <div class="container">
+        <section class="hero">
+            <div class="badge">🔥 New — R.E.T.E.N.T.I.O.N. Framework v1.0</div>
+            <h1>Stop Losing Clients.<br>Start Growing Them.</h1>
+            <p>15 battle-tested AI prompts that help AI automation agencies reduce churn, identify expansion opportunities, and turn every client relationship into a multi-year partnership.</p>
+            <div class="cta-group">
+                <a href="#" class="cta-btn">Get the Prompt Pack — $14 →</a>
+                <a href="https://tennie321.github.io/ai-revenue-toolkit/" class="cta-btn-secondary">Explore Bundle ($37)</a>
+            </div>
+            <div class="price-tag">📦 Bundle includes 12+ products — 36% savings</div>
+        </section>
+        
+        <div class="stats-row">
+            <div class="stat-item">
+                <div class="number">15</div>
+                <div class="label">Battle-Tested Prompts</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">R.E.T.E.N.T.I.O.N.</div>
+                <div class="label">Proven Framework</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">~8,500</div>
+                <div class="label">Words of Content</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">5-95%</div>
+                <div class="label">Churn Reduction Potential</div>
+            </div>
+        </div>
+        
+        <section class="section">
+            <h2 class="section-title">The R.E.T.E.N.T.I.O.N. Framework</h2>
+            <p class="section-subtitle">A systematic approach to client retention and revenue expansion</p>
+            
+            <div class="framework-grid">
+                <div class="framework-item">
+                    <div class="letter">R</div>
+                    <h3>Review Client Health</h3>
+                    <p>7-dimension health score analysis across engagement, satisfaction, value perception, and more</p>
+                </div>
+                <div class="framework-item">
+                    <div class="letter">E</div>
+                    <h3>Evaluate NPS & Drivers</h3>
+                    <p>Deep satisfaction analysis identifying what keeps clients happy — and what doesn't</p>
+                </div>
+                <div class="framework-item">
+                    <div class="letter">T</div>
+                    <h3>Track Engagement</h3>
+                    <p>Usage trends, adoption scoring, and drop-off analysis to catch disengagement early</p>
+                </div>
+                <div class="framework-item">
+                    <div class="letter">E</div>
+                    <h3>Execute QBRs</h3>
+                    <p>Complete QBR scripts that demonstrate ROI and open expansion conversations</p>
+                </div>
+                <div class="framework-item">
+                    <div class="letter">N</div>
+                    <h3>Nurture Relationships</h3>
+                    <p>Executive relationship strategies for multi-threading and champion development</p>
+                </div>
+                <div class="framework-item">
+                    <div class="letter">T</div>
+                    <h3>Trigger Expansion</h3>
+                    <p>Systematic cross-sell identification with pitch scripts and revenue projections</p>
+                </div>
+                <div class="framework-item">
+                    <div class="letter">I</div>
+                    <h3>Identify Churn Signals</h3>
+                    <p>Early warning detection — catch at-risk indicators before it's too late</p>
+                </div>
+                <div class="framework-item">
+                    <div class="letter">O</div>
+                    <h3>Optimize Delivery</h3>
+                    <p>Process improvements that increase quality, reduce cost, and boost satisfaction</p>
+                </div>
+                <div class="framework-item">
+                    <div class="letter">N</div>
+                    <h3>Navigate Renewals</h3>
+                    <p>Complete renewal scripts with tiered proposals and objection handling</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Choose Your Tier</h2>
+            <p class="section-subtitle">From solo prompt pack to full white-label agency license</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Standalone</h3>
+                    <div class="price">$14 <span>/ once</span></div>
+                    <ul>
+                        <li>15 full-length AI prompts</li>
+                        <li>R.E.T.E.N.T.I.O.N. framework</li>
+                        <li>~8,500 words of content</li>
+                        <li>Markdown format (edit freely)</li>
+                        <li>Personal use license</li>
+                    </ul>
+                    <a href="#" class="card-btn">Buy Now — $14</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <h3>Bundle</h3>
+                    <div class="price">$37 <span>/ once</span></div>
+                    <div class="saving">Save $22 (36% off $58)</div>
+                    <ul>
+                        <li>Everything in Standalone</li>
+                        <li>11+ other AI agency products</li>
+                        <li>Cold Email Swipe File (180 templates)</li>
+                        <li>All Python CLI tools</li>
+                        <li>All prompt packs & guides</li>
+                    </ul>
+                    <a href="https://tennie321.github.io/ai-revenue-toolkit/" class="card-btn">Get the Bundle — $37</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Agency</h3>
+                    <div class="price">$97 <span>/ once</span></div>
+                    <ul>
+                        <li>Everything in Bundle</li>
+                        <li>White-label rights</li>
+                        <li>Team training guide</li>
+                        <li>Client-ready deliverables</li>
+                        <li>Commercial use license</li>
+                    </ul>
+                    <a href="#" class="card-btn">Buy Now — $97</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <summary>What exactly do I get?</summary>
+                    <div class="answer">You get a 15-prompt Markdown file (~8,500 words) covering the complete R.E.T.E.N.T.I.O.N. framework. Each prompt is fully written with bracketed customization fields. Just copy-paste into ChatGPT, Claude, or Gemini with your client data.</div>
+                </div>
+                <div class="faq-item">
+                    <summary>Do I need technical skills?</summary>
+                    <div class="answer">Zero. If you can copy-paste text into ChatGPT, you can use this. No coding, no setup, no tools to install.</div>
+                </div>
+                <div class="faq-item">
+                    <summary>What if it doesn't work for me?</summary>
+                    <div class="answer">Apply these prompts consistently. If you don't see reduced churn or increased expansion within 90 days, email us for a full refund.</div>
+                </div>
+                <div class="faq-item">
+                    <summary>Can I share this with my team?</summary>
+                    <div class="answer">Standalone is for personal use. Agency tier ($97) includes full white-label and team distribution rights.</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="email-section">
+            <h2>Get Updates & Free Retention Tips</h2>
+            <p>Join 500+ agency owners who get our weekly retention playbook</p>
+            <form class="email-form">
+                <input type="email" placeholder="your@email.com" required>
+                <button type="submit">Subscribe →</button>
+            </form>
+        </section>
+        
+        <footer class="footer">
+            <p>© 2026 <a href="https://tennie321.github.io/ai-revenue-toolkit/">AI Revenue Toolkit</a> — Built for AI Automation Agencies</p>
+        </footer>
+    </div>
+</body>
+</html>

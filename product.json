@@ -1,0 +1,32 @@
+{
+  "product": "AI Agency Client Retention & Expansion Prompt Pack",
+  "version": "1.0",
+  "date": "2026-07-18",
+  "description": "14 battle-tested AI prompts across the R.E.T.E.N.T.I.O.N. framework for AI automation agencies to retain clients, reduce churn, and drive account expansion",
+  "framework": "R.E.T.E.N.T.I.O.N. — Review, Evaluate, Track, Execute, Nurture, Trigger, Identify, Optimize, Navigate",
+  "total_prompts": 14,
+  "prompts": [
+    "1. R — Review Client Health Dashboard (7-dimension health score analysis)",
+    "2. E — Evaluate Client NPS & Satisfaction Drivers",
+    "3. T — Track Engagement Metrics & Usage Trends",
+    "4. E — Execute Value Communication (Quarterly Business Review Script)",
+    "5. N — Nurture Relationship (Personalized Check-in Strategy)",
+    "6. T — Trigger Expansion Opportunities (Cross-sell & Upsell Identification)",
+    "7. I — Identify At-Risk Signals & Churn Indicators",
+    "8. O — Optimize Service Delivery (Process Improvement Analysis)",
+    "9. N — Navigate Renewal Conversations (Contract Renewal Script)",
+    "10. R — Retention Scorecard Builder (Custom Dashboard Template)",
+    "11. E — Early Warning Alert System Configuration",
+    "12. T — Tiered Retention Playbook (Gold/Silver/Bronze client levels)",
+    "13. I — In-Client Champion Development Strategy",
+    "14. O — Outcome-Focused Reporting Template (Value realization documentation)",
+    "15. N — Net Revenue Retention Calculator & Growth Tracker"
+  ],
+  "suggested_price": 14,
+  "bundle_price": 37,
+  "standalone_price": 14,
+  "tier_bundle_price": 37,
+  "tier_agency_price": 97,
+  "target_audience": "AI automation agencies with 10+ clients looking to reduce churn below 5% and grow existing accounts by 30%+ YoY",
+  "file": "2026-07-18_retention_expansion_prompt_pack.md"
+}
